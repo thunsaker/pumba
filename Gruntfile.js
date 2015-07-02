@@ -5,9 +5,10 @@ module.exports = function(grunt) {
       pkg: grunt.file.readJSON('package.json'),
       clean: {
          options: {
-            force: true
+            // force: false
          },
-         output: ['js/_output']
+         files: ['js/_output/*'],
+         folders: ['js/_output/tmp']
       },
       typescript : {
          options: {
@@ -46,7 +47,11 @@ module.exports = function(grunt) {
             }]
          },
          options: {
-
+            mangle: true, // Don't obfuscate vars and methods
+            compress: {
+               drop_console: true // Remove all calls to console
+            },
+            beautify: false, // Make compressed/minified files readable
          },
       }
    });
@@ -55,6 +60,6 @@ module.exports = function(grunt) {
    grunt.loadNpmTasks('grunt-typescript');
    grunt.loadNpmTasks('grunt-contrib-jshint');
    grunt.loadNpmTasks('grunt-contrib-uglify');
-   grunt.registerTask('default', ['typescript','jshint']);
+   grunt.registerTask('default', ['clean','typescript','jshint']);
    grunt.registerTask('build', ['clean','typescript','jshint','uglify']);
 };

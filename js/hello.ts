@@ -18,3 +18,4 @@ function greeter(person : Person) {
 var user = new Student("James", "W", "Howlett");
 
 document.body.innerHTML = greeter(user);
+console.log("Huzzah!");
