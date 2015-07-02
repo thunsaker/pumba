@@ -1,0 +1,41 @@
+.box {
+  background-color: #ff9900;
+  border-color: #ffd699;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+}
+/* Mixin */
+.hero-width {
+  width: 400px;
+}
+.text-center {
+  text-align: center;
+}
+body {
+  color: #ff9900;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  text-align: center;
+}
+footer {
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #7a7a7a;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  background-image: -webkit-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+  color: white;
+}
+footer img {
+  width: 50px;
+  margin: 0 5px;
+  vertical-align: middle;
+}

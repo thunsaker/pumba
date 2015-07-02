@@ -1,0 +1,62 @@
+@base-color: #21abcd; // Orange
+@footer-color: #7A7A7A; // Gray
+@font: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Less demo code
+.box-shadow(@style, @c) when (iscolor(@c)) {
+   -webkit-box-shadow: @style @c;
+   -moz-box-shadow: @style @c;
+   box-shadow:         @style @c;
+}
+.box-shadow(@style, @alpha: 25%) when (isnumber(@alpha)) {
+   .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box {
+   background-color: saturate(@base-color, 5%);
+   border-color: lighten(@base-color, 30%);
+   .box-shadow(0 0 5px, 75%)
+}
+// End Less demo code
+
+/* Mixin */
+.quick-gradient (@origin: left, @alpha: 0.2) {
+   background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+   background-image: -webkit-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+   background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+   background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+   background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+   background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+
+.hero-width {
+	width: 400px;
+}
+
+.text-center {
+	text-align:center;
+}
+
+body {
+   color: @base-color;
+   font-family: @font;
+   .text-center;
+}
+
+footer {
+   font-size: 14px;
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   width: 100%;
+   padding: 10px 0;
+   background-color: @footer-color;
+   .quick-gradient(top, 0.1);
+   color: white;
+}
+
+footer img {
+   width: 50px;
+   margin: 0 5px;
+   vertical-align: middle;
+}
